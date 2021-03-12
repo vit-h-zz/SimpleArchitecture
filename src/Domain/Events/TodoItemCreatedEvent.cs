@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Entities;
+﻿using SimpleArchitecture.Domain.Common;
+using SimpleArchitecture.Domain.Entities;
 
-namespace CleanArchitecture.Domain.Events
+namespace SimpleArchitecture.Domain.Events
 {
     public class TodoItemCreatedEvent : DomainEvent
     {

@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using CleanArchitecture.Application.Common.Mappings;
-using CleanArchitecture.Application.TodoLists.Queries.GetTodos;
-using CleanArchitecture.Domain.Entities;
+using SimpleArchitecture.Application.Common.Mappings;
+using SimpleArchitecture.Application.TodoLists.Queries.GetTodos;
+using SimpleArchitecture.Domain.Entities;
 using NUnit.Framework;
 using System;
 using System.Runtime.Serialization;
 
-namespace CleanArchitecture.Application.UnitTests.Common.Mappings
+namespace SimpleArchitecture.Application.UnitTests.Common.Mappings
 {
     public class MappingTests
     {

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Application.Common.Security;
-using CleanArchitecture.Domain.Enums;
+using SimpleArchitecture.Application.Common.Interfaces;
+using SimpleArchitecture.Application.Common.Security;
+using SimpleArchitecture.Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos
+namespace SimpleArchitecture.Application.TodoLists.Queries.GetTodos
 {
     public class GetTodosQuery : IRequest<TodosVm>
     {

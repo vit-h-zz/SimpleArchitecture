@@ -1,10 +1,10 @@
-﻿using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Enums;
-using CleanArchitecture.Domain.Events;
+﻿using SimpleArchitecture.Domain.Common;
+using SimpleArchitecture.Domain.Enums;
+using SimpleArchitecture.Domain.Events;
 using System;
 using System.Collections.Generic;
 
-namespace CleanArchitecture.Domain.Entities
+namespace SimpleArchitecture.Domain.Entities
 {
     public class TodoItem : AuditableEntity, IHasDomainEvent
     {

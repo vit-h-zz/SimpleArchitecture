@@ -1,15 +1,15 @@
-﻿using CleanArchitecture.Application.Common.Models;
-using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
-using CleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem;
-using CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem;
-using CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItemDetail;
-using CleanArchitecture.Application.TodoItems.Queries.GetTodoItemsWithPagination;
-using CleanArchitecture.Application.TodoLists.Queries.GetTodos;
+﻿using SimpleArchitecture.Application.Common.Models;
+using SimpleArchitecture.Application.TodoItems.Commands.CreateTodoItem;
+using SimpleArchitecture.Application.TodoItems.Commands.DeleteTodoItem;
+using SimpleArchitecture.Application.TodoItems.Commands.UpdateTodoItem;
+using SimpleArchitecture.Application.TodoItems.Commands.UpdateTodoItemDetail;
+using SimpleArchitecture.Application.TodoItems.Queries.GetTodoItemsWithPagination;
+using SimpleArchitecture.Application.TodoLists.Queries.GetTodos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.WebUI.Controllers
+namespace SimpleArchitecture.WebUI.Controllers
 {
     [Authorize]
     public class TodoItemsController : ApiControllerBase

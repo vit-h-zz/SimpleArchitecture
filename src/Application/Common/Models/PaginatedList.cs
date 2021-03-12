@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.Common.Models
+namespace SimpleArchitecture.Application.Common.Models
 {
     public class PaginatedList<T> 
     {

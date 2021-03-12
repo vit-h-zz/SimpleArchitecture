@@ -1,29 +1,29 @@
-﻿using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.ValueObjects;
-using CleanArchitecture.Infrastructure.Identity;
+﻿using SimpleArchitecture.Domain.Entities;
+using SimpleArchitecture.Domain.ValueObjects;
+using SimpleArchitecture.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Infrastructure.Persistence
+namespace SimpleArchitecture.Infrastructure.Persistence
 {
     public static class ApplicationDbContextSeed
     {
         public static async Task SeedDefaultUserAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
-            var administratorRole = new IdentityRole("Administrator");
+            var adminRole = new IdentityRole("Admin");
 
-            if (roleManager.Roles.All(r => r.Name != administratorRole.Name))
+            if (roleManager.Roles.All(r => r.Name != adminRole.Name))
             {
-                await roleManager.CreateAsync(administratorRole);
+                await roleManager.CreateAsync(adminRole);
             }
 
-            var administrator = new ApplicationUser { UserName = "administrator@localhost", Email = "administrator@localhost" };
+            var admin = new ApplicationUser { UserName = "admin@localhost", Email = "admin@localhost" };
 
-            if (userManager.Users.All(u => u.UserName != administrator.UserName))
+            if (userManager.Users.All(u => u.UserName != admin.UserName))
             {
-                await userManager.CreateAsync(administrator, "Administrator1!");
-                await userManager.AddToRolesAsync(administrator, new [] { administratorRole.Name });
+                await userManager.CreateAsync(admin, "Admin1!");
+                await userManager.AddToRolesAsync(admin, new [] { adminRole.Name });
             }
         }
 

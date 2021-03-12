@@ -1,4 +1,4 @@
-export const ApplicationName = 'CleanArchitecture.WebUI';
+export const ApplicationName = 'SimpleArchitecture.WebUI';
 
 export const ReturnUrlType = 'returnUrl';
 

@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Exceptions;
+﻿using SimpleArchitecture.Domain.Common;
+using SimpleArchitecture.Domain.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CleanArchitecture.Domain.ValueObjects
+namespace SimpleArchitecture.Domain.ValueObjects
 {
     public class Colour : ValueObject
     {

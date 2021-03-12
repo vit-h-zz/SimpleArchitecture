@@ -1,13 +1,13 @@
-﻿using CleanArchitecture.Application.Common.Exceptions;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Entities;
+﻿using SimpleArchitecture.Application.Common.Exceptions;
+using SimpleArchitecture.Application.Common.Interfaces;
+using SimpleArchitecture.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoLists.Commands.DeleteTodoList
+namespace SimpleArchitecture.Application.TodoLists.Commands.DeleteTodoList
 {
     public class DeleteTodoListCommand : IRequest
     {

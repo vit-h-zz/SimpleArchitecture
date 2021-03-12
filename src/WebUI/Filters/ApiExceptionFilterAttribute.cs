@@ -1,11 +1,11 @@
-﻿using CleanArchitecture.Application.Common.Exceptions;
+﻿using SimpleArchitecture.Application.Common.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
 
-namespace CleanArchitecture.WebUI.Filters
+namespace SimpleArchitecture.WebUI.Filters
 {
     public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
     {

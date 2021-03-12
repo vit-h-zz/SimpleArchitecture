@@ -1,9 +1,9 @@
-using CleanArchitecture.Application;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Infrastructure;
-using CleanArchitecture.Infrastructure.Persistence;
-using CleanArchitecture.WebUI.Filters;
-using CleanArchitecture.WebUI.Services;
+using SimpleArchitecture.Application;
+using SimpleArchitecture.Application.Common.Interfaces;
+using SimpleArchitecture.Infrastructure;
+using SimpleArchitecture.Infrastructure.Persistence;
+using SimpleArchitecture.WebUI.Filters;
+using SimpleArchitecture.WebUI.Services;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,7 +16,7 @@ using NSwag;
 using NSwag.Generation.Processors.Security;
 using System.Linq;
 
-namespace CleanArchitecture.WebUI
+namespace SimpleArchitecture.WebUI
 {
     public class Startup
     {
@@ -62,7 +62,7 @@ namespace CleanArchitecture.WebUI
 
             services.AddOpenApiDocument(configure =>
             {
-                configure.Title = "CleanArchitecture API";
+                configure.Title = "SimpleArchitecture API";
                 configure.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme
                 {
                     Type = OpenApiSecuritySchemeType.ApiKey,
@@ -126,8 +126,8 @@ namespace CleanArchitecture.WebUI
 
                 if (env.IsDevelopment())
                 {
-                    //spa.UseAngularCliServer(npmScript: "start");
-                    spa.UseProxyToSpaDevelopmentServer(Configuration["SpaBaseUrl"] ?? "http://localhost:4200");
+                    spa.UseAngularCliServer(npmScript: "start");
+                    //spa.UseProxyToSpaDevelopmentServer(Configuration["SpaBaseUrl"] ?? "http://localhost:4200");
                 }
             });
         }

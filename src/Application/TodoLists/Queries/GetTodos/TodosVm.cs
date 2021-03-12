@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos
+namespace SimpleArchitecture.Application.TodoLists.Queries.GetTodos
 {
     public class TodosVm
     {

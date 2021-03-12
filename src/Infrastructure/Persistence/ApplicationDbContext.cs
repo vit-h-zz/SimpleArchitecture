@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Infrastructure.Identity;
+﻿using SimpleArchitecture.Application.Common.Interfaces;
+using SimpleArchitecture.Domain.Common;
+using SimpleArchitecture.Domain.Entities;
+using SimpleArchitecture.Infrastructure.Identity;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Infrastructure.Persistence
+namespace SimpleArchitecture.Infrastructure.Persistence
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, IApplicationDbContext
     {
@@ -37,7 +37,7 @@ namespace CleanArchitecture.Infrastructure.Persistence
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
-            foreach (Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<AuditableEntity> entry in ChangeTracker.Entries<AuditableEntity>())
+            foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
             {
                 switch (entry.State)
                 {
@@ -71,11 +71,10 @@ namespace CleanArchitecture.Infrastructure.Persistence
         {
             while (true)
             {
-                var domainEventEntity = ChangeTracker.Entries<IHasDomainEvent>()
-                    .Select(x => x.Entity.DomainEvents)
-                    .SelectMany(x => x)
-                    .Where(domainEvent => !domainEvent.IsPublished)
-                    .FirstOrDefault();
+                var domainEventEntity = ChangeTracker
+                    .Entries<IHasDomainEvent>()
+                    .SelectMany(entry => entry.Entity.DomainEvents)
+                    .FirstOrDefault(domainEvent => !domainEvent.IsPublished);
                 if (domainEventEntity == null) break;
 
                 domainEventEntity.IsPublished = true;

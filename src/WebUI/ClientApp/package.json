@@ -1,12 +1,12 @@
 {
-  "name": "cleanarchitecture.webui",
+  "name": "SimpleArchitecture.webui",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "echo 'Starting...' && ng serve",
     "start:dev": "echo 'Starting (Dev)...' && ng serve --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
-    "build:ssr": "ng run CleanArchitecture.WebUI:server:dev",
+    "build:ssr": "ng run SimpleArchitecture.WebUI:server:dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

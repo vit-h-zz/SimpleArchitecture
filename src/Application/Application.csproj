@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>CleanArchitecture.Application</RootNamespace>
-    <AssemblyName>CleanArchitecture.Application</AssemblyName>
+    <RootNamespace>SimpleArchitecture.Application</RootNamespace>
+    <AssemblyName>SimpleArchitecture.Application</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

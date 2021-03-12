@@ -1,12 +1,12 @@
-﻿using CleanArchitecture.Application.Common.Exceptions;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Enums;
+﻿using SimpleArchitecture.Application.Common.Exceptions;
+using SimpleArchitecture.Application.Common.Interfaces;
+using SimpleArchitecture.Domain.Entities;
+using SimpleArchitecture.Domain.Enums;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItemDetail
+namespace SimpleArchitecture.Application.TodoItems.Commands.UpdateTodoItemDetail
 {
     public class UpdateTodoItemDetailCommand : IRequest
     {

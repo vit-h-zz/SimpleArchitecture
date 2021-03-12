@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.IntegrationTests
+namespace SimpleArchitecture.Application.IntegrationTests
 {
     using static Testing;
 

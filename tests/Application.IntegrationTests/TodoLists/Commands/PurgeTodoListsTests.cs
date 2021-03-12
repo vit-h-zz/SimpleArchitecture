@@ -1,15 +1,15 @@
-﻿using CleanArchitecture.Application.Common.Exceptions;
-using CleanArchitecture.Application.Common.Security;
-using CleanArchitecture.Application.TodoLists.Commands.CreateTodoList;
-using CleanArchitecture.Application.TodoLists.Commands.PurgeTodoLists;
-using CleanArchitecture.Application.TodoLists.Queries.ExportTodos;
-using CleanArchitecture.Domain.Entities;
+﻿using SimpleArchitecture.Application.Common.Exceptions;
+using SimpleArchitecture.Application.Common.Security;
+using SimpleArchitecture.Application.TodoLists.Commands.CreateTodoList;
+using SimpleArchitecture.Application.TodoLists.Commands.PurgeTodoLists;
+using SimpleArchitecture.Application.TodoLists.Queries.ExportTodos;
+using SimpleArchitecture.Domain.Entities;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.IntegrationTests.TodoLists.Commands
+namespace SimpleArchitecture.Application.IntegrationTests.TodoLists.Commands
 {
     using static Testing;
 

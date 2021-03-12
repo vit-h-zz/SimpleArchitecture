@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Domain.Common;
+﻿using SimpleArchitecture.Domain.Common;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.Common.Interfaces
+namespace SimpleArchitecture.Application.Common.Interfaces
 {
     public interface IDomainEventService
     {

@@ -4,9 +4,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
-using ValidationException = CleanArchitecture.Application.Common.Exceptions.ValidationException;
+using ValidationException = SimpleArchitecture.Application.Common.Exceptions.ValidationException;
 
-namespace CleanArchitecture.Application.Common.Behaviours
+namespace SimpleArchitecture.Application.Common.Behaviours
 {
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>

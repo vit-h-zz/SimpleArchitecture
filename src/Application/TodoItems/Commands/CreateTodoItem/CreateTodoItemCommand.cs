@@ -1,11 +1,11 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Events;
+﻿using SimpleArchitecture.Application.Common.Interfaces;
+using SimpleArchitecture.Domain.Entities;
+using SimpleArchitecture.Domain.Events;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem
+namespace SimpleArchitecture.Application.TodoItems.Commands.CreateTodoItem
 {
     public class CreateTodoItemCommand : IRequest<int>
     {

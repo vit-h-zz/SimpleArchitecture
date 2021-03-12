@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>CleanArchitecture.WebUI</RootNamespace>
-    <AssemblyName>CleanArchitecture.WebUI</AssemblyName>
+    <RootNamespace>SimpleArchitecture.WebUI</RootNamespace>
+    <AssemblyName>SimpleArchitecture.WebUI</AssemblyName>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>true</IsPackable>

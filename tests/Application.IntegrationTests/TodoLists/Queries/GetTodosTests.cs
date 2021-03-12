@@ -1,12 +1,12 @@
-﻿using CleanArchitecture.Application.TodoLists.Queries.GetTodos;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.ValueObjects;
+﻿using SimpleArchitecture.Application.TodoLists.Queries.GetTodos;
+using SimpleArchitecture.Domain.Entities;
+using SimpleArchitecture.Domain.ValueObjects;
 using FluentAssertions;
 using NUnit.Framework;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.IntegrationTests.TodoLists.Queries
+namespace SimpleArchitecture.Application.IntegrationTests.TodoLists.Queries
 {
     using static Testing;
 

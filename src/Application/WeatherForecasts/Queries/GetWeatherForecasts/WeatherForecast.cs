@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CleanArchitecture.Application.WeatherForecasts.Queries.GetWeatherForecasts
+namespace SimpleArchitecture.Application.WeatherForecasts.Queries.GetWeatherForecasts
 {
     public class WeatherForecast
     {

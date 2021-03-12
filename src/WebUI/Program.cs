@@ -1,5 +1,5 @@
-using CleanArchitecture.Infrastructure.Identity;
-using CleanArchitecture.Infrastructure.Persistence;
+using SimpleArchitecture.Infrastructure.Identity;
+using SimpleArchitecture.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.WebUI
+namespace SimpleArchitecture.WebUI
 {
     public class Program
     {

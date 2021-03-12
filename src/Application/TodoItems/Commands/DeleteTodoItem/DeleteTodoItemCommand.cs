@@ -1,11 +1,11 @@
-﻿using CleanArchitecture.Application.Common.Exceptions;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Entities;
+﻿using SimpleArchitecture.Application.Common.Exceptions;
+using SimpleArchitecture.Application.Common.Interfaces;
+using SimpleArchitecture.Domain.Entities;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem
+namespace SimpleArchitecture.Application.TodoItems.Commands.DeleteTodoItem
 {
     public class DeleteTodoItemCommand : IRequest
     {

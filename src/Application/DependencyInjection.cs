@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using CleanArchitecture.Application.Common.Behaviours;
+using SimpleArchitecture.Application.Common.Behaviours;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace CleanArchitecture.Application
+namespace SimpleArchitecture.Application
 {
     public static class DependencyInjection
     {

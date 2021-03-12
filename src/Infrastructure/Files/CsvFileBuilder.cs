@@ -1,12 +1,12 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Application.TodoLists.Queries.ExportTodos;
-using CleanArchitecture.Infrastructure.Files.Maps;
+﻿using SimpleArchitecture.Application.Common.Interfaces;
+using SimpleArchitecture.Application.TodoLists.Queries.ExportTodos;
+using SimpleArchitecture.Infrastructure.Files.Maps;
 using CsvHelper;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
-namespace CleanArchitecture.Infrastructure.Files
+namespace SimpleArchitecture.Infrastructure.Files
 {
     public class CsvFileBuilder : ICsvFileBuilder
     {

@@ -1,8 +1,8 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
+﻿using SimpleArchitecture.Application.Common.Interfaces;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
-namespace CleanArchitecture.WebUI.Services
+namespace SimpleArchitecture.WebUI.Services
 {
     public class CurrentUserService : ICurrentUserService
     {

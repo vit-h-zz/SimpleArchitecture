@@ -15,7 +15,7 @@
         "DOTNET_ENVIRONMENT": "Development"
       }
     },
-    "CleanArchitecture.WebUI": {
+    "SimpleArchitecture.WebUI": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

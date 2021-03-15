@@ -4,6 +4,8 @@ using SimpleArchitecture.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Threading.Tasks;
+using Bogus;
+using SimpleArchitecture.Domain.Enums;
 
 namespace SimpleArchitecture.Infrastructure.Persistence
 {
@@ -38,8 +40,8 @@ namespace SimpleArchitecture.Infrastructure.Persistence
                     Colour = Colour.Blue,
                     Items =
                     {
-                        new TodoItem { Title = "Apples", Done = true },
-                        new TodoItem { Title = "Milk", Done = true },
+                        new TodoItem { Title = "Apples", Done = true, Priority = PriorityLevel.High, Note = "Green сrispy"},
+                        new TodoItem { Title = "Milk", Done = true, Priority = PriorityLevel.High, Note = "Organic" },
                         new TodoItem { Title = "Bread", Done = true },
                         new TodoItem { Title = "Toilet paper" },
                         new TodoItem { Title = "Pasta" },
@@ -48,6 +50,21 @@ namespace SimpleArchitecture.Infrastructure.Persistence
                         new TodoItem { Title = "Water" }
                     }
                 });
+
+                context.TodoLists.Add(new Faker<TodoList>()
+                    .RuleFor(l => l.Title, "Visit clients")
+                    .RuleFor(l => l.Colour, f => f.PickRandom(Colour.SupportedColours))
+                    .RuleFor(l => l.Items,
+                        faker => new Faker<TodoItem>()
+                            .RuleFor(i => i.Title, f => f.Name.FullName())
+                            .RuleFor(i => i.Note, f => f.Address.FullAddress())
+                            .RuleFor(i => i.Done, f => f.Random.Bool())
+                            .RuleFor(i => i.Priority, f => f.PickRandom<PriorityLevel>())
+                            .RuleFor(i => i.Reminder,
+                                (f, l) => l.Priority == PriorityLevel.High ? f.Date.Soon(days: 5) : null)
+                            .Generate(faker.Random.Number(5, 15))
+                    )
+                    .Generate());
 
                 await context.SaveChangesAsync();
             }

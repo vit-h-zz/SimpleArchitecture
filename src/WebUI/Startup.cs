@@ -15,6 +15,8 @@ using Microsoft.Extensions.Hosting;
 using NSwag;
 using NSwag.Generation.Processors.Security;
 using System.Linq;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 namespace SimpleArchitecture.WebUI
 {
@@ -41,6 +43,8 @@ namespace SimpleArchitecture.WebUI
 
             services.AddHealthChecks()
                 .AddDbContextCheck<ApplicationDbContext>();
+            services.AddHealthChecksUI()
+                .AddInMemoryStorage();
 
             services.AddControllersWithViews(options =>
                 options.Filters.Add<ApiExceptionFilterAttribute>())
@@ -91,6 +95,12 @@ namespace SimpleArchitecture.WebUI
             }
 
             app.UseHealthChecks("/health");
+            app.UseHealthChecksUI(options =>
+            {
+                options.UIPath = "/health-ui";
+                options.ApiPath = "/health-ui-api";
+            });
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             if (!env.IsDevelopment())
@@ -105,7 +115,6 @@ namespace SimpleArchitecture.WebUI
             });
 
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseIdentityServer();
             app.UseAuthorization();
@@ -115,6 +124,11 @@ namespace SimpleArchitecture.WebUI
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+                endpoints.MapHealthChecks("/healthz", new HealthCheckOptions
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
             });
 
             app.UseSpa(spa =>

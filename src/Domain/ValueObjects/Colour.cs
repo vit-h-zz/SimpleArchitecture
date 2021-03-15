@@ -65,7 +65,7 @@ namespace SimpleArchitecture.Domain.ValueObjects
             return Code;
         }
 
-        protected static IEnumerable<Colour> SupportedColours
+        public static IEnumerable<Colour> SupportedColours
         {
             get
             {

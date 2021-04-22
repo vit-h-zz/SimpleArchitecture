@@ -10,10 +10,14 @@ This is a solution template for creating a Single Page App (SPA) with Angular an
 * [Entity Framework Core 5](https://docs.microsoft.com/en-us/ef/core/)
 * [Angular 10](https://angular.io/)
 * [MediatR](https://github.com/jbogard/MediatR)
+* [NSwag](https://github.com/RicoSuter/NSwag)
 * [AutoMapper](https://automapper.org/)
 * [FluentValidation](https://fluentvalidation.net/)
 * [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/moq) & [Respawn](https://github.com/jbogard/Respawn)
 * [Docker](https://www.docker.com/)
+* [Microsoft.Extensions.Diagnostics.HealthChecks](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-5.0)
+* [SpecFlow](https://specflow.org/)
+* [Bogus](https://github.com/bchavez/Bogus)
 
 ## Getting Started
 

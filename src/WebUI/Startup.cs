@@ -1,3 +1,4 @@
+using System;
 using SimpleArchitecture.Application;
 using SimpleArchitecture.Application.Common.Interfaces;
 using SimpleArchitecture.Infrastructure;
@@ -17,6 +18,7 @@ using NSwag.Generation.Processors.Security;
 using System.Linq;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace SimpleArchitecture.WebUI
 {
@@ -42,7 +44,18 @@ namespace SimpleArchitecture.WebUI
             services.AddHttpContextAccessor();
 
             services.AddHealthChecks()
-                .AddDbContextCheck<ApplicationDbContext>();
+                .AddDbContextCheck<ApplicationDbContext>()
+                .AddCheck("My Custom AlwaysHealthy Check", () => HealthCheckResult.Healthy());
+
+                // Install more checks if needed "AspNetCore.HealthChecks...."
+                //.AddCheck<MyCustomCheck>("My Custom Check")
+                //.AddSqlServer(Configuration["ConnectionString"]) // Your database connection string
+                //.AddDiskStorageHealthCheck(s => s.AddDrive("C:\\", 1024)) // 1024 MB (1 GB) free minimum
+                //.AddProcessAllocatedMemoryHealthCheck(512) // 512 MB max allocated memory
+                //.AddProcessHealthCheck("ProcessName", p => p.Length > 0) // check if process is running
+                //.AddWindowsServiceHealthCheck("someservice", s => s.Status == ServiceControllerStatus.Running) // check if a windows service is running
+                //.AddUrlGroup(new Uri("https://localhost:44318/weatherforecast"), "Example endpoint"); // should return status code 200
+
             services.AddHealthChecksUI()
                 .AddInMemoryStorage();
 

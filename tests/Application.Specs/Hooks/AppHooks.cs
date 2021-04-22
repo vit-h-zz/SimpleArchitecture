@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using SimpleArchitecture.Application.Common.Interfaces;
 using SimpleArchitecture.Infrastructure.Identity;
@@ -17,16 +15,23 @@ using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Respawn;
 using TechTalk.SpecFlow;
+using TechTalk.SpecRun;
 
 namespace Application.Specs.Hooks
 {
     [Binding]
     public class AppHooks
     {
+        public AppHooks(TestRunContext testRunContext)
+        {
+            _testRunContext = testRunContext;
+        }
+
         private static IConfigurationRoot _configuration;
         private static IServiceScopeFactory _scopeFactory;
         private static Checkpoint _checkpoint;
         private static string _currentUserId;
+        private readonly TestRunContext _testRunContext;
 
         [BeforeScenario]
         public async Task SetupTestUsers(ScenarioContext scenarioContext)
@@ -34,13 +39,11 @@ namespace Application.Specs.Hooks
             await ResetState();
         }
 
-        [BeforeTestRun]
-        public static void RunBeforeAnyTests()
+        [BeforeScenario(Order = 1)]
+        public void RunBeforeAnyTests()
         {
-            //TODO: Fix appsettings location issue.
             var builder = new ConfigurationBuilder()
-                //.SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(@"D:\Projects\Examples\SimpleArchitecture\tests\Application.Specs\appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile(Path.Combine(_testRunContext.TestDirectory, "appsettings.json"), optional: false, reloadOnChange: true)
                 .AddEnvironmentVariables();
 
             _configuration = builder.Build();

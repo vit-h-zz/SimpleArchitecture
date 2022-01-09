@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Infrastructure\Infrastructure.csproj" />
-    <ProjectReference Include="..\SimpleArchitecture\src\WebUI\WebUI.csproj" />
+    <ProjectReference Include="..\..\src\WebUI\WebUI.csproj" />
   </ItemGroup>
 
 </Project>

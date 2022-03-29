@@ -43,6 +43,13 @@ namespace SimpleArchitecture.WebUI
 
             services.AddHttpContextAccessor();
 
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
+
             services.AddHealthChecks()
                 .AddDbContextCheck<ApplicationDbContext>()
                 .AddCheck("My Custom AlwaysHealthy Check", () => HealthCheckResult.Healthy());
@@ -95,6 +102,8 @@ namespace SimpleArchitecture.WebUI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("MyPolicy");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

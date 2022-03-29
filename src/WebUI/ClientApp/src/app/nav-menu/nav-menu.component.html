@@ -13,7 +13,7 @@
       </button>
       <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
            [ngClass]="{ show: isExpanded }">
-        <app-login-menu></app-login-menu>
+        <!--<app-login-menu></app-login-menu>-->
         <ul class="navbar-nav flex-grow">
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
@@ -30,10 +30,10 @@
             <a class="nav-link text-dark" [routerLink]="['/todo']">Todo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="/api" target="_blank">API</a>
+            <a class="nav-link text-dark" href="{{apiBaseUrl}}/api" target="_blank">API</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="/health-ui" target="_blank">Health</a>
+            <a class="nav-link text-dark" href="{{apiBaseUrl}}/health-ui" target="_blank">Health</a>
           </li>
         </ul>
       </div>

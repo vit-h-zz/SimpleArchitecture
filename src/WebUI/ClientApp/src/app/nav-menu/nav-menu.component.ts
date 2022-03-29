@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { API_BASE_URL } from "../web-api-client";
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class NavMenuComponent {
   isExpanded = false;
+  apiBaseUrl: string;
+
+  constructor(@Inject(API_BASE_URL) baseUrl?: string) {
+    this.apiBaseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
+  }
 
   collapse() {
     this.isExpanded = false;

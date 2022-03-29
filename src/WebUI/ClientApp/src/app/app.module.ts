@@ -15,6 +15,8 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
+import { API_BASE_URL } from './web-api-client';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,10 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
+    {
+      provide: API_BASE_URL,
+      useValue: environment.apiRoot
+    }
   ],
   bootstrap: [AppComponent]
 })
